@@ -1,0 +1,20 @@
+{
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "description": "IP addres tracker app design with Vue3",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "keywords": [
+    "vue",
+    "git",
+    "IP"
+  ],
+  "author": "@ichbinsantiago",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
