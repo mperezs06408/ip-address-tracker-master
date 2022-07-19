@@ -13,6 +13,7 @@ Screen widths
 }
 
 * {
+    box-sizing: content-box;
     font-family: 'Rubik', sans-serif;
     padding: 0;
     border:none;
@@ -21,6 +22,7 @@ Screen widths
 }
 
 html, body {
+    position: relative;
     font-size:18px;
     width: 100vw;
     height: 100vh;

@@ -1,16 +1,9 @@
 app.component('card', {
-    data() {
-        return {
-            listPrueba:[
-                {
-                    label: 'IP Addres',
-                    info: 1234
-                },
-                {
-                    label: 'Location',
-                    info:'Brooklyn, NY 10001'
-                }
-            ]
+    props: {
+        listElements: {
+            type: Array, 
+            default: () => [{ label: 'ip address', info: '0.0.0.0'}],
+            require: true
         }
     },
     template: 
@@ -18,7 +11,7 @@ app.component('card', {
     <section class="card-container">
         <ul class="card-list">
             <card-info
-                v-for="(item, i) in listPrueba"
+                v-for="(item, i) in listElements"
                     :label="item.label"
                     :info="item.info"
             />
