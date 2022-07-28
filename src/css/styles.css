@@ -33,6 +33,7 @@ h1 {
     bottom: 0;
     font-size: 1em;
     line-height: 2.5em;
+    width: -moz-available;
     padding-right: 3em;
     padding-left: 1.5em;
     border-radius: 15px;
