@@ -3,6 +3,10 @@ app.component('v-map', {
         ipValue: {
             type: String,
             require: true
+        },
+        type: {
+            type: String,
+            require: true
         }
     },
     data() {
@@ -82,6 +86,8 @@ app.component('v-map', {
             this.latitude = result.location.lat;
             this.longitude = result.location.lng;
 
+            const ipAddress = result.ip;
+
             const city = result.location.city;
             const country = result.location.country;
             const postalCode = result.location.postalCode;
@@ -89,7 +95,8 @@ app.component('v-map', {
             const timeZone = `UTC ${result.location.timezone}`;
 
             const isp = result.isp;
-
+        
+            this.locationData[0].info = ipAddress;
             this.locationData[1].info = `${city}, ${country} ${postalCode}`;
             this.locationData[2].info = timeZone;
             this.locationData[3].info = isp;
@@ -109,9 +116,8 @@ app.component('v-map', {
     watch: {
         ipValue: async function () {
             if (this.ipValue != null) {
-                this.locationData[0].info = this.ipValue;
                 try {
-                    await this.getIPLocation(this.ipValue);
+                    await this.getIPLocation(this.ipValue, this.type);
 
                     const coordinates = [this.latitude, this.longitude];
                     console.log(coordinates);

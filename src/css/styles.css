@@ -22,7 +22,7 @@ h1 {
 
 .input-container {
     position: relative;
-    height: 3em;
+    height: 2.5em;
 }
 
 #input {
@@ -37,6 +37,11 @@ h1 {
     padding-left: 1.5em;
     border-radius: 15px;
     margin: auto 2em;
+    transition:color .5s;
+}
+
+#input::placeholder {
+    opacity: 0.7;
 }
 
 #input-button {
@@ -51,20 +56,32 @@ h1 {
     margin: auto 2.5em;
 }
 
+#input-button:active {
+    background-color: #333;
+}
+
 #button-img {
     position: relative;
     width: auto;
+}
+
+.errorInput {
+    color: #F00;
 }
 
 /*Card-template styles*/
 
 .card-container {
     position: relative;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 1.5em 2em;
+    padding: 0 2em;
+    margin-top: 1.5em;
     z-index: 100;
+}
+
+.card-list {
+    background-color: #fff;
+    padding: 20px 0;
+    border-radius: 20px;
 }
 /*Card-info styles*/
 

@@ -3,6 +3,7 @@ const app = Vue.createApp({
         return{
             title: 'IP Address Tracker',
             ip: null,
+            ipType: null,
             listData : []
         }
     },    
@@ -19,6 +20,7 @@ const app = Vue.createApp({
     </main>    
     <v-map
         :ipValue="ip"
+        :type="ipType"
         @cardData="updateListData"    
     />
     `,
@@ -27,8 +29,8 @@ const app = Vue.createApp({
             this.listData = e;
         },
         updateIP(e) {
-            this.ip = e;
-            console.log(this.ip);
+            this.ip = e[0];
+            this.ipType = e[1];
         }
     }
 });
